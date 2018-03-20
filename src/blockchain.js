@@ -8,6 +8,8 @@ class Block {
   }
 }
 
+let blockchain = [genesisBlock];
+
 const genesisBlock = new Block(
   0,
   'D2D7E3C53296A2012AAF9051F43353EF607E9F2D62DC7EF1F6292EDB98655231',
@@ -16,8 +18,10 @@ const genesisBlock = new Block(
   'This is the genesis!!'
 );
 
-let blockchain = [genesisBlock];
+const getTimestamp = () => new Date().getTime();
 
-console.log('====================================');
-console.log(blockchain);
-console.log('====================================');
+const createNewBlock = data => {
+  const previousBlock = getLastBlock();
+  const newBlockIndex = previousBlock.index + 1;
+  const newTimestamp = getTimestamp();
+};
