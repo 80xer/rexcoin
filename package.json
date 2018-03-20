@@ -6,5 +6,8 @@
   "repository": "git@github.com:80xer/rexcoin.git",
   "author": "delee <de.lee@lawcompany.co.kr>",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "crypto-js": "^3.1.9-1"
+  }
 }

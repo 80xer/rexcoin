@@ -1,3 +1,5 @@
+const CryptoJS = require('crypto-js');
+
 class Block {
   constructor(index, hash, previousHash, timestamp, data) {
     this.index = index;
@@ -20,8 +22,25 @@ const genesisBlock = new Block(
 
 const getTimestamp = () => new Date().getTime();
 
+const createHash = (index, previousHash, timestamp, data) =>
+  CryptoJS.SHA256(index + previousHash + timestamp + data).toString();
+
 const createNewBlock = data => {
   const previousBlock = getLastBlock();
   const newBlockIndex = previousBlock.index + 1;
   const newTimestamp = getTimestamp();
+  const newHash = createHash(
+    newBlockIndex,
+    previousHash.hash,
+    newTimestamp,
+    data
+  );
+  const newBlock = new Block(
+    newBlockIndex,
+    newHash,
+    previousHash,
+    newTimestamp,
+    data
+  );
+  return newBlock;
 };
