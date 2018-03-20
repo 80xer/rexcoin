@@ -1,2 +1,3 @@
-# rexcoin
+# Rexcoin
+
 bitcoin clone by javascript
