@@ -1,0 +1,10 @@
+{
+  "name": "rexcoin",
+  "version": "1.0.0",
+  "description": "bitcoin clone by javascript",
+  "main": "src/server.js",
+  "repository": "git@github.com:80xer/rexcoin.git",
+  "author": "delee <de.lee@lawcompany.co.kr>",
+  "license": "MIT",
+  "private": false
+}
