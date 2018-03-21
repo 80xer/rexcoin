@@ -37,14 +37,14 @@ const createNewBlock = data => {
   const newTimestamp = getTimestamp();
   const newHash = createHash(
     newBlockIndex,
-    previousHash.hash,
+    previousBlock.hash,
     newTimestamp,
     data
   );
   const newBlock = new Block(
     newBlockIndex,
     newHash,
-    previousHash,
+    previousBlock.hash,
     newTimestamp,
     data
   );
