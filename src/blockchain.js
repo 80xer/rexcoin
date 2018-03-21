@@ -10,8 +10,6 @@ class Block {
   }
 }
 
-let blockchain = [genesisBlock];
-
 const genesisBlock = new Block(
   0,
   'D2D7E3C53296A2012AAF9051F43353EF607E9F2D62DC7EF1F6292EDB98655231',
@@ -19,6 +17,8 @@ const genesisBlock = new Block(
   new Date().getTime(),
   'This is the genesis!!'
 );
+
+let blockchain = [genesisBlock];
 
 const getLastBlock = () => blockchain[blockchain.length - 1];
 
